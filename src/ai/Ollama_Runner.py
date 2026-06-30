@@ -1,4 +1,3 @@
-from ollama import chat, ChatResponse
 from typing import Dict, List
 import requests
 from src.logger import Logger
@@ -27,7 +26,7 @@ class Ollama_Runner:
 
         prompts = [{"role": "system", "content": system}, {"role": "user", "content": article}]
 
-        return chat(prompts=prompts)
+        return self.chat(prompts=prompts)
     
     def rank_articles(self, articles: List[str]):
         system = self.prompts["rank"]["system"]
@@ -37,4 +36,4 @@ class Ollama_Runner:
         for article in articles:
             prompts.append(article)
 
-        return chat(prompts=prompts)
+        return self.chat(prompts=prompts)

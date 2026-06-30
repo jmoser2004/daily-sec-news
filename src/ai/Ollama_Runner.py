@@ -15,7 +15,8 @@ class Ollama_Runner:
         
         payload = {
             "model": model_name,
-            "messages": prompts
+            "messages": prompts,
+            "stream": False
         }
 
         response = requests.post(self.url, json=payload)

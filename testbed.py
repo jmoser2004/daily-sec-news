@@ -42,7 +42,8 @@ async def test():
 
     ai = Ollama_Runner(url=ai_url, prompts=prompt_conf, model=model_conf)
 
-    print(ai.summarize_article(article=scraped[0]))
+    for article in scraped:
+        print(ai.summarize_article(article=article))
 
 
 asyncio.run(test())

@@ -1,0 +1,42 @@
+feed_handler:
+  feed_urls:
+    - "https://feeds.feedburner.com/TheHackersNews"
+    - "https://krebsonsecurity.com/feed/"
+    - "https://www.exploit-db.com/rss.xml"
+    - "https://cvefeed.io/rssfeed/latest.xml"
+    - "https://www.zerodayinitiative.com/rss/published/"
+    - "https://feeds.feedburner.com/securityweek"
+    - "https://gbhackers.com/feed/"
+
+  logger:
+    name: "feed_handler"
+    path: "logs/feed.log"
+    log_to_console: True
+
+article_scraper:
+  scrapers:
+    - base_url: "https://thehackernews.com"
+      tags:
+        article_tag: "div.articlebody"
+        paragraph_tag: "p"
+    - base_url: "https://krebsonsecurity.com"
+      tags:
+        article_tag: "div.entry-content"
+        paragraph_tag: "p"
+    - base_url: "https://www.exploit-db.com"
+      tags:
+        article_tag: "div.card-body"
+        paragraph_tag: "pre"
+    - base_url: "https://cvefeed.io"
+      tags:
+        article_tag: "div.card-body"
+        paragraph_tag: "p.card-text"
+    - base_url: "https://www.zerodayinitiative.com"
+      tags:
+        article_tag: "article"
+        paragraph_tag: "p"
+
+  logger:
+    name: "article_scraper"
+    path: "logs/feed.log"
+    log_to_console: True

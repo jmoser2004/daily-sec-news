@@ -1,0 +1,21 @@
+url:
+  protocol: "http"
+  base_url: "localhost"
+  port: "11434"
+  dirs:
+    - "api"
+    - "chat"
+
+prompts:
+  summarize:
+    system: "You are a summarizer for news articles. For each news article you are given, you will output an article summary. You will return the summary and nothing else. There should be no extra text. The tone of the summary should be professional and short. The summary should be between 3 and 6 sentences."
+  rank:
+    system: "You are a ranker for news articles. You will be given a list of summaries of news articles. Return the new index of the article with the old index in the following format: {new, old}. You will return the indicies and nothing else."
+
+models:
+  - name: mistral
+    full_tag: "mistral-small3.1:24b"
+    logger:
+      name: "mistral-ollama"
+      path: "logs/ai.log"
+      log_to_console: True

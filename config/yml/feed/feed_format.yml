@@ -1,0 +1,5 @@
+article_scraper:
+  - SITE_NAME:
+      base_url: "BASE_URL"
+      article_tag: "TAG"
+      paragraph_tag: "TAG"
